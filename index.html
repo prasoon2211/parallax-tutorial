@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var $win = $(window);
+            $('.background').each(function(){
+                var scroll_speed = 10;
+                var $this = $(this);
+                $(window).scroll(function() {
+                    var bgScroll = -(($win.scrollTop() - $this.offset().top)/ scroll_speed);
+                    var bgPosition = 'center '+ bgScroll + 'px';
+                    $this.css('background-position', bgPosition);
+                });
+            });
+        });
+    </script>
+
+    <style>
+
+    div.background {
+        background: url('bg.jpg') no-repeat center 0 fixed;
+        height: 1000px;
+        position: relative;
+        -webkit-box-shadow: 0 0 20px #333;
+        box-shadow: 0 0 20px #333;
+    }
+
+    div.content {
+        font-family: serif;
+        position: absolute;
+        height: 500px;
+        text-align: center;
+        width: 100%;
+        top: 30%;
+        font-size:62px;
+        color: #444;
+    }
+
+    </style>
+</head>
+
+<div class="background">
+    <div class="content">
+        <p>Hi, this is some content!</p>
+        <p>Parallax is awesome!</p>
+    </div>
+</div>
+
+<!--section 2-->
+<div class="background">
+    <div class="content">
+        <p>The second section!!</p>
+        <p>More parallax!</p>
+    </div>
+</div>
+
+<!--section 3-->
+<div class="background">
+    <div class="content">
+        <p>We can add as many sections as we want!</p>
+    </div>
+</div>
+</html>
